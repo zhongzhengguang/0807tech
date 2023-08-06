@@ -35,7 +35,7 @@ const Header = () => {
                     <h1 className="hover:border-b text-[30px]">0807 - tech</h1>
                 </Link>
                 <div>
-                    <ul className="hidden md:flex">
+                    <ul className="flex">
                         <Link href="/">
                             <li className="ml-10 text-sm uppercase hover:border-b">
                                 Home
