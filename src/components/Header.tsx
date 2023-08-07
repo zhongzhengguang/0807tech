@@ -37,7 +37,7 @@ const Header = () => {
                 <div>
                     <ul className="flex">
                         <Link href="/">
-                            <li className="ml-10 text-sm uppercase hover:border-b">
+                            <li className="ml-10 text-blue-400 text-sm uppercase hover:border-b">
                                 Home
                             </li>
                         </Link>
