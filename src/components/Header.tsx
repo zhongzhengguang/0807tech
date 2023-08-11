@@ -1,51 +1,48 @@
-import React, { useEffect, useState } from "react";
-import { AiOutlineClose, AiOutlineMail, AiOutlineMenu } from "react-icons/ai";
-import { FaGithub, FaLinkedinIn } from "react-icons/fa";
-import { BsFillPersonLinesFill } from "react-icons/bs";
+import React from "react";
 import Link from "next/link";
-
+import mockHeader from "@/src/mock/Header.json";
+import { useHeader } from "@/src/hook/useHeader";
+import { useRouter } from "next/router";
 const Header = () => {
-    const [nav, setNav] = useState(false);
-    const handleNav = () => {
-        setNav(!nav);
-    };
-
-    const [shadow, setShadow] = useState(false);
-
-    useEffect(() => {
-        const handleShadow = () => {
-            if (window.scrollY >= 90) {
-                setShadow(true);
-            } else {
-                setShadow(false);
-            }
-        };
-        window.addEventListener("scroll", handleShadow);
-    }, []);
+    const { showList, setShowList } = useHeader();
+    const router = useRouter();
     return (
         <div
-            className={
-                shadow
-                    ? "fixed w-full h-20 shadow-xl z-[100] bg-white"
-                    : "fixed w-full h-20 z-[100] "
-            }
+            onMouseLeave={() => setShowList("")}
+            className={"fixed w-full h-20 shadow-xl z-[100] bg-white"}
         >
             <div className="flex justify-between items-center w-[1280px] h-full px-20 mx-auto">
                 <Link href="/">
-                    <h1 className="hover:border-b text-[30px]">0807 - tech</h1>
+                    <h1 className="hover:border-b text-[30px]">精志科技</h1>
                 </Link>
                 <div>
                     <ul className="flex">
-                        <Link href="/">
-                            <li className="ml-10 text-blue-400 text-sm uppercase hover:border-b">
-                                Home
-                            </li>
-                        </Link>
-                        <Link href="/Calculation">
-                            <li className="ml-10 text-sm uppercase hover:border-b">
-                                Calculation
-                            </li>
-                        </Link>
+                        {mockHeader.map((item) => (
+                            <div
+                                onMouseEnter={() => setShowList(item.title)}
+                                key={item.id}
+                                className="ml-10 text-sm relative uppercase hover:border-b hover:cursor-pointer border-black"
+                            >
+                                {item.title}
+                                {showList === item.title && (
+                                    <div
+                                        className={`absolute bg-white px-5 py-2 w-[200px] flex flex-col space-y-5 mt-5`}
+                                    >
+                                        {item.list.map((listItem) => (
+                                            <div
+                                                onClick={() =>
+                                                    router.push(listItem.link)
+                                                }
+                                                key={listItem.id}
+                                                className={`hover:border-b`}
+                                            >
+                                                {listItem.name}
+                                            </div>
+                                        ))}
+                                    </div>
+                                )}
+                            </div>
+                        ))}
                     </ul>
                 </div>
             </div>

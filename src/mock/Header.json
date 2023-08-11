@@ -1,0 +1,90 @@
+[
+    {
+        "id": 1,
+        "title": "公司介紹",
+        "list":
+        [
+            {
+                "id": 1,
+                "name": "特色簡介",
+                "link": "/Info"
+            },
+            {
+                "id": 2,
+                "name": "基本資料",
+                "link": "/InfoBasic"
+            },
+            {
+                "id": 3,
+                "name": "聯絡我們",
+                "link": "/ContactUs"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "title": "最新消息",
+        "list":
+        [
+            {
+                "id": 1,
+                "name": "新消息",
+                "link": "/News"
+            },
+            {
+                "id": 2,
+                "name": "News",
+                "link": "/News_1"
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "title": "商品介紹",
+        "list":
+        [
+            {
+                "id": 1,
+                "name": "接觸角(水滴角)量測儀",
+                "link": "/ContactAngle"
+            },
+            {
+                "id": 2,
+                "name": "表面張力計",
+                "link": "/SurfaceTension"
+            },
+            {
+                "id": 3,
+                "name": "熱傳導分析儀",
+                "link": "/TCM"
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "title": "相關原理",
+        "list":
+        [
+            {
+                "id": 1,
+                "name": "接觸角(水滴角)",
+                "link": "/ContactAnglePrinciples"
+            },
+            {
+                "id": 2,
+                "name": "表面張力",
+                "link": "/SurfaceTensionPrinciples"
+            },
+            {
+                "id": 3,
+                "name": "熱傳導分析",
+                "link": "/TCMPrinciples"
+            },
+            {
+                "id": 4,
+                "name": "其他",
+                "link": "/OtherPrinciples"
+            }
+        ]
+    }
+]
