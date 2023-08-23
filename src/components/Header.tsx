@@ -5,15 +5,10 @@ import { useHeader } from "@/src/hook/useHeader";
 import { useRouter } from "next/router";
 import Image from "next/image";
 import logo from "@/public/logo.png";
-import { useTranslation } from "react-i18next";
 
 const Header = () => {
   const { showList, setShowList } = useHeader();
   const router = useRouter();
-  const { t, i18n } = useTranslation();
-  const handleLanguageChange = (language: string) => {
-    i18n.changeLanguage(language);
-  };
 
   return (
     <div
