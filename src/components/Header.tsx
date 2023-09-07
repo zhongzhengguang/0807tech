@@ -4,7 +4,7 @@ import mockHeader from "@/src/mock/Header.json";
 import { useHeader } from "@/src/hook/useHeader";
 import { useRouter } from "next/router";
 import Image from "next/image";
-import logo from "@/public/logo.png";
+import logo from "@/public/logo.jpeg";
 
 const Header = () => {
     const { showList, setShowList } = useHeader();
