@@ -1,38 +1,9 @@
 import Main from "@/src/components/Main";
-import Page1 from "@/src/components/Page1";
 import Head from "next/head";
-import { useRouter } from "next/router";
-import { useEffect, useRef } from "react";
-import { scrollToRef } from "@/src/common/functions";
-import Page2 from "@/src/components/Page2";
-import Page3 from "@/src/components/Page3";
-import Page4 from "@/src/components/Page4";
-import Page5 from "@/src/components/Page5";
+import { Banner } from "@/src/components/Banner/Banner";
+import { Footer } from "@/src/components/Footer/Footer";
 
 export default function Home() {
-    const page1Ref = useRef(null);
-    const page2Ref = useRef(null);
-    const page3Ref = useRef(null);
-    const page4Ref = useRef(null);
-    const page5Ref = useRef(null);
-
-    const router = useRouter();
-    useEffect(() => {
-        if (router.asPath === "/#page1") {
-            scrollToRef(page1Ref, 90);
-        } else if (router.asPath === "/#page2") {
-            scrollToRef(page2Ref, 90);
-        } else if (router.asPath === "/#page3") {
-            scrollToRef(page3Ref, 90);
-        } else if (router.asPath === "/#page4") {
-            scrollToRef(page4Ref, 90);
-        } else if (router.asPath === "/#page5") {
-            scrollToRef(page5Ref, 90);
-        } else {
-            window.scrollTo(0, 0);
-        }
-    }, [router]);
-
     return (
         <div>
             <Head>
@@ -43,23 +14,9 @@ export default function Home() {
                 />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <div className="pt-20 w-[1280px] mx-auto">
-                <Main />
-                <div ref={page1Ref}>
-                    <Page1 />
-                </div>
-                <div ref={page2Ref}>
-                    <Page2 />
-                </div>
-                <div ref={page3Ref}>
-                    <Page3 />
-                </div>
-                <div ref={page4Ref}>
-                    <Page4 />
-                </div>
-                <div ref={page5Ref}>
-                    <Page5 />
-                </div>
+            <div className="pt-20 w-full mx-auto">
+                <Banner />
+                <Footer />
             </div>
         </div>
     );
